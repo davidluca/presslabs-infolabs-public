@@ -2,7 +2,7 @@
 
 
 ## Diagram
-See `docs/strucrure.png`
+See ![docs](docs/structure.png)
 
 ## Models
 
