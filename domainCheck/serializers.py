@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from status.models import DomainCheck, Feature
+from status.models import Report, Feature
 
-class DomainCheckSerializer(serializers.HyperlinkedModelSerializer):
+class ReportSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Check
         fields = ('url', 'domain', 'state', 'create_date', 'feature')

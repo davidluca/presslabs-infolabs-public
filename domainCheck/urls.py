@@ -2,7 +2,7 @@ from rest_framework import routers
 from infolabs.domainCheck import views
 
 router = routers.DefaultRouter()
-router.register(r'domaincheck', views.DomainCheckViewSet)
+router.register(r'report', views.ReportViewSet)
 router.register(r'feature', views.FeatureViewSet)
 
 # Wire up our API using automatic URL routing.
