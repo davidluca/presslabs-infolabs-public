@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-	'domainCheck.apps.DomaincheckConfig',
-	'rest_framework',
+    'domainCheck.apps.DomaincheckConfig',
+    'rest_framework',
 ]
 
 REST_FRAMEWORK = {

@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from status.models import Report, Feature
 
+
 class ReportSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Check
