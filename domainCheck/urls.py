@@ -6,7 +6,7 @@ router = routers.DefaultRouter()
 router.register(r'report', views.ReportViewSet)
 router.register(r'feature', views.FeatureViewSet)
 
-app_name = 'domainCheck'
+
 urlpatterns = [
     url(r'^', include(router.urls)),
 ]
