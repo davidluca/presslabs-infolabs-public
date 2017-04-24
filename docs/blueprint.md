@@ -10,7 +10,7 @@ Simple REST API for creating checks for domains and get detailed report about th
 ## Possible responses
 Depending on the request being made, you can get:
  * `200` - The request has been successfully performed
- * `202` - The resource has been successfully created
+ * `201` - The resource has been successfully created
  * `400` - The request body contains attributes that does not know how to be handled
  * `401` - The request requires authentication
  * `404` - Can not find the requested resource
@@ -28,7 +28,7 @@ get the state and results of a report. Also listing will be available.
 ## Create a new check [POST]
 + Request (application/json)
    + Attributes (CheckPost)
-+ Response 202 (application/json)
++ Response 201 (application/json)
    + Headers
            Location: /check/1
 + Response 400 (application/json)
