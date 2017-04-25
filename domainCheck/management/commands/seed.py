@@ -13,7 +13,6 @@ class Command(BaseCommand):
         feature2 = G(Feature, report=report1)
         feature3 = G(Feature, report=report2)
         feature4 = G(Feature, report=report2)
-        # user1 = G(User, username="admin")
         user1, _ = User.objects.get_or_create(username="admin")
         user1.is_staff = True
         user1.set_password("admin")
