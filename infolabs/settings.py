@@ -128,3 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+#Celery settings
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
