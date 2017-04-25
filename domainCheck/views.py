@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from domainCheck.models import Report, Feature
+from rest_framework import viewsets
+from domainCheck.serializers import ReportSerializer, FeatureSerializer
 
-# Create your views here.
+
+class ReportViewSet(viewsets.ModelViewSet):
+    queryset = Report.objects.all()
+    serializer_class = ReportSerializer
+
+
+class FeatureViewSet(viewsets.ModelViewSet):
+    queryset = Feature.objects.all()
+    serializer_class = FeatureSerializer
