@@ -1,0 +1,5 @@
+{
+  "tests/test_domainCheck.py::test_get_feature_exists": true,
+  "tests/test_domainCheck.py::test_get_report_exists": true,
+  "tests/test_domainCheck.py::test_post_feature_exists": true
+}
