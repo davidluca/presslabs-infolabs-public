@@ -1,4 +1,4 @@
-from abc import ABCMeta
+from abc import ABCMeta, abstractmethod
 
 
 class BaseFeature(metaclass=ABCMeta):
@@ -22,5 +22,10 @@ class BaseFeature(metaclass=ABCMeta):
 
 class ValueObject:
 
+    feature_name = "response_time"
+
     def __init__(self, value):
-        pass
+        self.value = value
+
+    def get_value(self):
+        return self.value

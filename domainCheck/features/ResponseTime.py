@@ -1,4 +1,4 @@
-from domainCheck.features.base import BaseFeature
+from domainCheck.features.base import BaseFeature, ValueObject
 
 
 class ResponseTimeFeature(BaseFeature):
@@ -10,5 +10,5 @@ class ResponseTimeFeature(BaseFeature):
         return ValueObject(self.value)
 
     @staticmethod
-    def get_compare_value():
+    def get_base_value():
         return ValueObject(100)

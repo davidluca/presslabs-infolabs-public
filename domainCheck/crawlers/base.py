@@ -1,4 +1,4 @@
-from abc import ABCMeta
+from abc import ABCMeta, abstractmethod
 
 
 class BaseCrawler(metaclass=ABCMeta):
@@ -11,4 +11,4 @@ class BaseCrawler(metaclass=ABCMeta):
         pass
 
     def get_results_list(self):
-        return results_list
+        return self.results_list
