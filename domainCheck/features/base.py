@@ -3,10 +3,24 @@ from abc import ABCMeta
 
 class BaseFeature(metaclass=ABCMeta):
 
+    def __init__(self):
+        self.value = None
+
     @abstractmethod
-    def run(self, base_url):
-        raise NotImplementedError("This method should be overridden")
+    def run(self, response):
+        pass
+
+    @abstractmethod
+    def get_result(self):
+        pass
 
     @staticmethod
-    def get_compare_value():
-        raise NotImplementedError("This method should be overridden")
+    @abstractmethod
+    def get_base_value():
+        pass
+
+
+class ValueObject:
+
+    def __init__(self, value):
+        pass

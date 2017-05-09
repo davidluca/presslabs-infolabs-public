@@ -1,21 +1,14 @@
-import requests
-
-
 from domainCheck.features.base import BaseFeature
 
 
 class ResponseTimeFeature(BaseFeature):
 
-    TYPE = 'value'
+    def run(self, response):
+        self.value = response.elapsed
 
-    def run(self, base_url):
-        resp = requests.get(base_url)
-        return {
-            'value': resp.elapsed
-        }
+    def get_result(self):
+        return ValueObject(self.value)
 
     @staticmethod
     def get_compare_value():
-        return {
-            'value': 100
-        }
+        return ValueObject(100)
