@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from jsonfield import JSONField
 from django.db import models
 from django.utils import timezone
+from django.core.validators import RegexValidator
 
 
 class Report(models.Model):
