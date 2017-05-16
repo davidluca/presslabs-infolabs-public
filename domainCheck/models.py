@@ -3,7 +3,7 @@ from jsonfield import JSONField
 from django.db import models
 from django.utils import timezone
 from django.core.validators import RegexValidator
-
+from urllib.parse import urlparse
 
 class Report(models.Model):
     FINISHED = 'finished'
@@ -11,7 +11,10 @@ class Report(models.Model):
     REPORT_STATES = (
         (PENDING, 'pending'),
         (FINISHED, 'finished'))
-    domain = models.CharField(max_length=200)
+    domain = models.CharField(
+        max_length=200,
+        #validators=[RegexValidator(regex='^(([a-zA-Z]{1})|([a-zA-Z]{1}[a-zA-Z]{1})|([a-zA-Z]{1}[0-9]{1})|([0-9]{1}[a-zA-Z]{1})|([a-zA-Z0-9][a-zA-Z0-9-_]{1,61}[a-zA-Z0-9]))\.([a-zA-Z]{2,6}|[a-zA-Z0-9-]{2,30}\.[a-zA-Z]{2,3})$')]
+        )
     state = models.CharField(
         max_length=8,
         choices=REPORT_STATES,
@@ -28,3 +31,4 @@ class Feature(models.Model):
 
     class Meta:
         unique_together = (('report', 'name'),)
+

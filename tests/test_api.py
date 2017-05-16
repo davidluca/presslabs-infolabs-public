@@ -10,15 +10,14 @@ def test_create_report(api_client):
         '/report/', {'domain': 'https://www.facebook.com/'}, format='json'
     )
     assert response.status_code == 201
-    assert response.data['domain'] == 'https://www.facebook.com/'
+    assert response.data['domain'] == 'www.facebook.com'
     assert response.data['state'] == 'pending'
 
 
-@pytest.mark.xfail
 @pytest.mark.django_db
 def test_bad_domain_field(api_client):
     response = api_client.post(
-        '/report/', {'domain': 'sadsfas'}, format='json'
+        '/report/', {'domain': 'sasdfsa.com'}, format='json'
     )
     assert response.status_code == 400
 
