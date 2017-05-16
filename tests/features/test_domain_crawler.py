@@ -1,6 +1,7 @@
 import pytest
 import responses
 from datetime import timedelta
+from requests import Timeout
 
 from domainCheck.crawlers.Domain import DomainCrawler
 
@@ -13,3 +14,23 @@ def test_response_time_feature():
     res_list = dc.get_results_list()
     assert len(res_list) == len(dc.FEATURES_LIST)
     assert res_list[0].get_value() <= timedelta(microseconds=500)
+
+
+@responses.activate
+def test_response_time_feature_timeout():
+    dc = DomainCrawler()
+    base_url = 'http://presslabs.com'
+
+    def request_callback(request):
+        raise Timeout()
+
+    responses.add_callback(
+        responses.GET, base_url, 
+        callback=request_callback
+    )
+
+    dc.crawl(base_url)
+    res_list = dc.get_results_list()
+    assert res_list == []
+
+

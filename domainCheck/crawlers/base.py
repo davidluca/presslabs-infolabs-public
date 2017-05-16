@@ -4,7 +4,9 @@ from abc import ABCMeta, abstractmethod
 class BaseCrawler(metaclass=ABCMeta):
 
     FEATURES_LIST = []
-    results_list = []
+
+    def __init__(self):
+        self.results_list = []
 
     @abstractmethod
     def crawl(self):
