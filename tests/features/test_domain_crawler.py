@@ -5,6 +5,7 @@ from requests import Timeout
 
 from domainCheck.crawlers.Domain import DomainCrawler
 
+
 @responses.activate
 def test_response_time_feature():
     dc = DomainCrawler()
@@ -25,7 +26,7 @@ def test_response_time_feature_timeout():
         raise Timeout()
 
     responses.add_callback(
-        responses.GET, base_url, 
+        responses.GET, base_url,
         callback=request_callback
     )
 
@@ -34,3 +35,11 @@ def test_response_time_feature_timeout():
     assert res_list == []
 
 
+@responses.activate
+def test_response_time_404():
+    dc = DomainCrawler()
+    base_url = 'http://presslabs.com'
+    responses.add(responses.GET, base_url, status=404)
+    dc.crawl(base_url)
+    res_list = dc.get_results_list()
+    assert res_list == []
