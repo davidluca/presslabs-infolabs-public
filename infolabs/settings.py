@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'domainCheck.apps.DomaincheckConfig',
     'rest_framework',
+	'django_seed',
 ]
 
 REST_FRAMEWORK = {

@@ -20,7 +20,7 @@ class BaseFeature(metaclass=ABCMeta):
         pass
 
 
-class ValueObject:
+class ValueResult:
 
     feature_name = "response_time"
 
