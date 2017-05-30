@@ -9,3 +9,5 @@ seed:
 
 full-test:
 	py.test -v --color=yes
+
+.PHONY: run lint full-test seed
