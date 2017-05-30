@@ -23,14 +23,3 @@ class BaseFeature(metaclass=ABCMeta):
     @abstractmethod
     def get_static_url(self, url):
         pass
-
-
-class ValueResult:
-
-    feature_name = "response_time"
-
-    def __init__(self, value):
-        self.value = value
-
-    def get_value(self):
-        return self.value

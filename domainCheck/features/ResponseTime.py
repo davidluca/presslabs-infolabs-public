@@ -1,4 +1,5 @@
-from domainCheck.features.base import BaseFeature, ValueResult
+from domainCheck.features.base import BaseFeature
+from domainCheck import ValueResult
 
 
 class ResponseTimeFeature(BaseFeature):
