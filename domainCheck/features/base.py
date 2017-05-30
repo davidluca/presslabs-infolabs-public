@@ -19,8 +19,13 @@ class BaseFeature(metaclass=ABCMeta):
     def get_base_value():
         pass
 
+    @staticmethod
+    @abstractmethod
+    def get_static_url(self, url):
+        pass
 
-class ValueObject:
+
+class ValueResult:
 
     feature_name = "response_time"
 
