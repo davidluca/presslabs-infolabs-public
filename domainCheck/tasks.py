@@ -5,7 +5,7 @@ import logging
 
 from celery import shared_task
 from django.conf import settings
-from domainCheck.models import Report
+from domainCheck.models import Report, Feature
 
 logger = logging.getLogger(__name__)
 
@@ -19,4 +19,11 @@ def perform_check(report_id):
         crawler = getattr(module, crawler_name)
         crawler_instance = crawler()
         crawler_instance.crawl(domain)
-
+        result_list_tuples = crawler_instance.get_results_list()
+        for result_value, name, compare_value in result_list_tuples:
+            Feature.objects.create(
+                value = result_value.get_value(),
+                name = name,
+                compare_value = compare_value.get_value(),
+                report = report
+            )

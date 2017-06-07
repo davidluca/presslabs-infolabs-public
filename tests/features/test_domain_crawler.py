@@ -12,9 +12,9 @@ def test_response_time_feature():
     base_url = 'http://presslabs.com'
     responses.add(responses.GET, base_url, status=200)
     dc.crawl(base_url)
-    res_list = dc.get_results_list()
-    assert len(res_list) == len(dc.FEATURES_LIST)
-    assert res_list[0].get_value()['value'] <= 0.1
+    res_list_tuples = dc.get_results_list()
+    assert len(res_list_tuples) == len(dc.FEATURES_LIST)
+    assert res_list_tuples[0][0].get_value()['value'] <= 0.1
 
 
 @responses.activate

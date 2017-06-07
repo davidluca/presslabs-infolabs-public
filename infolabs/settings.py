@@ -135,9 +135,6 @@ STATIC_URL = '/static/'
 
 
 # Celery settings
-<<<<<<< d82125bffe87ceaa590aab66146e34bbb1507567
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
-=======
 BROKER_URL = 'redis://localhost:6379/0'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'
 
@@ -146,4 +143,3 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'
 CRAWLERS = [
     ('DomainCrawler', 'domainCheck.crawlers.domain')
 ]
->>>>>>> added tasks
