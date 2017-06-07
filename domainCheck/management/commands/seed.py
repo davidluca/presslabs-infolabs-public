@@ -5,6 +5,7 @@ from domainCheck.models import Report, Feature
 
 
 class Command(BaseCommand):
+
     help = 'Initial generated data.'
 
     def handle(self, *args, **options):

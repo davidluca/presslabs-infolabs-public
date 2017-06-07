@@ -3,7 +3,7 @@ import responses
 from datetime import timedelta
 from requests import Timeout
 
-from domainCheck.crawlers.Domain import DomainCrawler
+from domainCheck.crawlers.domain import DomainCrawler
 
 
 @responses.activate

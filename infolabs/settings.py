@@ -96,24 +96,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME':
-            ('django.contrib.auth.password_validation'
-             '.UserAttributeSimilarityValidator',)
+        'NAME': ('django.contrib.auth.password_validation'
+                 '.UserAttributeSimilarityValidator'),
     },
     {
         'NAME':
-            ('django.contrib.auth.password_validation'
-             '.MinimumLengthValidator',)
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
         'NAME':
-            ('django.contrib.auth.password_validation'
-             '.CommonPasswordValidator',)
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
         'NAME':
-            ('django.contrib.auth.password_validation'
-             '.NumericPasswordValidator',)
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -139,4 +135,15 @@ STATIC_URL = '/static/'
 
 
 # Celery settings
+<<<<<<< d82125bffe87ceaa590aab66146e34bbb1507567
 CELERY_BROKER_URL = 'redis://localhost:6379/0'
+=======
+BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'
+
+
+# crawlers
+CRAWLERS = [
+    ('DomainCrawler', 'domainCheck.crawlers.domain')
+]
+>>>>>>> added tasks
