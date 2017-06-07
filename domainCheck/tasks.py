@@ -22,8 +22,8 @@ def perform_check(report_id):
         result_list_tuples = crawler_instance.get_results_list()
         for result_value, name, compare_value in result_list_tuples:
             Feature.objects.create(
-                value = result_value.get_value(),
-                name = name,
-                compare_value = compare_value.get_value(),
-                report = report
+                value=result_value.get_value(),
+                name=name,
+                compare_value=compare_value.get_value(),
+                report=report
             )
