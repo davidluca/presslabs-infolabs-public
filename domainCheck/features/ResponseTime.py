@@ -16,4 +16,4 @@ class ResponseTimeFeature(BaseFeature):
 
     @staticmethod
     def get_static_url(self, url):
-    	pass
+        pass
