@@ -19,13 +19,7 @@ class BaseFeature(metaclass=ABCMeta):
     def get_base_value():
         pass
 
-
-class ValueObject:
-
-    feature_name = "response_time"
-
-    def __init__(self, value):
-        self.value = value
-
-    def get_value(self):
-        return self.value
+    @staticmethod
+    @abstractmethod
+    def get_static_url(self, url):
+        pass
