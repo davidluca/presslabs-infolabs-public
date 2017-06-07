@@ -1,5 +1,5 @@
 from domainCheck.features.base import BaseFeature
-from domainCheck import ValueResult
+from domainCheck.value_result import ValueResult
 
 
 class ResponseTimeFeature(BaseFeature):
@@ -8,8 +8,12 @@ class ResponseTimeFeature(BaseFeature):
         self.value = response.elapsed
 
     def get_result(self):
-        return ValueResult(self.value)
+        return ValueResult(self.value.total_seconds())
 
     @staticmethod
     def get_base_value():
         return ValueResult(100)
+
+    @staticmethod
+    def get_static_url(self, url):
+        pass

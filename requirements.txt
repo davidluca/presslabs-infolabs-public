@@ -4,3 +4,4 @@ django_jsonfield==1.0.1
 celery==4.0.2
 redis==2.10.5
 requests==2.13.0
+responses==0.5.1

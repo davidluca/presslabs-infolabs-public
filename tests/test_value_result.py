@@ -27,8 +27,7 @@ def test_validate_list_of_non_tuples():
 
 
 def test_validate_dict():
-    tableObj = TableValueResult({'1': 1, '2': 2})
-    assert tableObj.get_value() == {
-        'type': 'TableValueResult',
-        'value': [('2', 2), ('1', 1)]
-    }
+    tableObjVar = TableValueResult({'1': 1, '2': 2})
+    tableObj = tableObjVar.get_value()
+    assert tableObj['type'] == 'TableValueResult'
+    assert sorted(tableObj['value']) == [('1', 1), ('2', 2)]

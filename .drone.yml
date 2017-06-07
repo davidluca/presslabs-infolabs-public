@@ -1,0 +1,10 @@
+pipeline:
+    infolabs: 
+      image: python:3.5
+      pull: true
+      environment:
+        - DJANGO_SETTINGS_MODULE=infolabs.settings
+      commands:
+        - pip install -U -r requirements.dev.txt
+        - make lint
+        - make full-test

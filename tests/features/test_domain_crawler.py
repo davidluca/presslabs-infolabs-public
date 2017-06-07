@@ -14,7 +14,7 @@ def test_response_time_feature():
     dc.crawl(base_url)
     res_list = dc.get_results_list()
     assert len(res_list) == len(dc.FEATURES_LIST)
-    assert res_list[0].get_value() <= timedelta(microseconds=500)
+    assert res_list[0].get_value()['value'] <= 0.1
 
 
 @responses.activate
