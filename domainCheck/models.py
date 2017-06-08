@@ -24,7 +24,9 @@ class Feature(models.Model):
     value = JSONField()
     compare_value = JSONField()
     report = models.ForeignKey(
-        'Report', on_delete=models.CASCADE)
+        'Report',
+        on_delete=models.CASCADE,
+        related_name='features')
 
     class Meta:
         unique_together = (('report', 'name'),)
