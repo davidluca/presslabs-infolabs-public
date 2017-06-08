@@ -26,3 +26,4 @@ class DomainCrawler(BaseCrawler):
                                           compare_value))
         except RequestException as re:
             logger.exception(RequestException)
+            raise
