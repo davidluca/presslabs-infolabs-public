@@ -11,7 +11,7 @@ class ResponseTimeFeature(BaseFeature):
         return ValueResult(self.value.total_seconds())
 
     @staticmethod
-    def get_base_value():
+    def get_compare_value():
         return ValueResult(100)
 
     @staticmethod

@@ -20,6 +20,10 @@ class DomainCrawler(BaseCrawler):
                 feature_instance = feature_class()
                 feature_instance.run(response)
                 result = feature_instance.get_result()
-                self.results_list.append(result)
+                compare_value = feature_instance.get_compare_value()
+                self.results_list.append((result,
+                                          feature_class.__name__,
+                                          compare_value))
         except RequestException as re:
             logger.exception(RequestException)
+            raise

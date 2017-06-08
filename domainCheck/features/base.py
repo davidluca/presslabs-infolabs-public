@@ -16,7 +16,7 @@ class BaseFeature(metaclass=ABCMeta):
 
     @staticmethod
     @abstractmethod
-    def get_base_value():
+    def get_compare_value():
         pass
 
     @staticmethod
