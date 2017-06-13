@@ -1,8 +1,10 @@
 from __future__ import unicode_literals
-from jsonfield import JSONField
+from urllib.parse import urlparse
+
 from django.db import models
 from django.utils import timezone
 from django.core.validators import RegexValidator
+from jsonfield import JSONField
 
 
 class Report(models.Model):
