@@ -19,7 +19,7 @@ def test_bad_domain_field(api_client):
     response = api_client.post(
         '/report/', {'domain': 'sasdfsa'}, format='json'
     )
-    assert response.data == { 'domain': ['Not a valid domain.'] } 
+    assert response.data == {'domain': ['Not a valid domain.']}
     assert response.status_code == 400
 
 
@@ -61,4 +61,3 @@ def test_create_feature(api_client):
         '/feature/', {'name': 'featureName'}, format='json'
     )
     assert response.status_code == 405
-

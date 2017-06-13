@@ -6,6 +6,7 @@ from django.utils import timezone
 from django.core.validators import RegexValidator
 from jsonfield import JSONField
 
+
 class Report(models.Model):
     FINISHED = 'finished'
     PENDING = 'pending'
@@ -29,4 +30,3 @@ class Feature(models.Model):
 
     class Meta:
         unique_together = (('report', 'name'),)
-
