@@ -1,9 +1,10 @@
+from urllib.parse import urlparse
+
 from rest_framework import serializers
 from django.core.exceptions import ValidationError
-from domainCheck.models import Report, Feature
-
-from urllib.parse import urlparse
 from django.core.validators import RegexValidator
+
+from domainCheck.models import Report, Feature
 
 
 class ReportSerializer(serializers.HyperlinkedModelSerializer):
@@ -13,7 +14,6 @@ class ReportSerializer(serializers.HyperlinkedModelSerializer):
 
     def validate_domain(self, value):
         parsed_url = urlparse(value)
-        print (parsed_url)
         if not parsed_url.hostname:
             raise ValidationError(('Not a valid domain.'))
         domain_validator = RegexValidator(

@@ -13,7 +13,7 @@ class Report(models.Model):
     REPORT_STATES = (
         (PENDING, 'pending'),
         (FINISHED, 'finished'))
-    domain = models.CharField(max_length=200,)
+    domain = models.CharField(max_length=200)
     state = models.CharField(
         max_length=8,
         choices=REPORT_STATES,
