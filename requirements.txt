@@ -5,3 +5,4 @@ celery==4.0.2
 redis==2.10.5
 requests==2.13.0
 responses==0.5.1
+publicsuffix=1.1.0

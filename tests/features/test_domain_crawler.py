@@ -1,6 +1,7 @@
+from datetime import timedelta
+
 import pytest
 import responses
-from datetime import timedelta
 from requests import Timeout
 from requests import RequestException
 

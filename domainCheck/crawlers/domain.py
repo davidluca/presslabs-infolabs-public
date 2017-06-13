@@ -2,7 +2,7 @@ import requests
 import logging
 
 from domainCheck.crawlers.base import BaseCrawler
-from domainCheck.features.ResponseTime import ResponseTimeFeature
+from domainCheck.features.response_time import ResponseTimeFeature
 from requests import RequestException
 
 logger = logging.getLogger(__name__)
