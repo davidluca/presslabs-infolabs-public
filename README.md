@@ -3,6 +3,7 @@
 
 ## Diagram
 See ![docs](docs/birdview.png)
+![docs](docs/specifics.png)
 
 ## Models
 
